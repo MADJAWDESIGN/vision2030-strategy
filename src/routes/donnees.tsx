@@ -48,6 +48,40 @@ function Page() {
           Les maquettes de tableaux de bord seront élaborées après la phase de diagnostic.
         </IllustrativeNote>
       </SectionBlock>
+
+      <SectionBlock eyebrow="Tableau de bord de démonstration" title="Structure proposée avant intégration des données LIFA.">
+        <div className="mb-6 inline-flex items-center gap-2 border border-accent/40 bg-accent/10 px-3 py-1 text-[10px] tracking-[0.24em] text-accent-foreground uppercase">
+          <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Données de démonstration
+        </div>
+        <div className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            ["Projets actifs", "24"],
+            ["Budget approuvé", "12,4 M$"],
+            ["Engagements", "7,9 M$"],
+            ["Dépenses", "4,2 M$"],
+            ["Prévision à terminaison", "12,8 M$"],
+            ["Variance", "+3 %"],
+            ["Projets à risque", "3"],
+            ["Coût moyen par logement", "18 700 $"],
+            ["Délai moyen", "142 jours"],
+            ["Déficiences ouvertes", "57"],
+            ["Indice santé portefeuille", "B-"],
+            ["Garanties < 12 mois", "9"],
+            ["Performance fournisseurs", "82 / 100"],
+            ["Consommation énergie", "163 kWh/m²"],
+            ["Émissions GES", "22 kg CO₂/m²"],
+            ["Avancement ESG", "38 %"],
+          ].map(([label, val]) => (
+            <div key={label} className="flex flex-col gap-2 bg-card p-5">
+              <div className="text-[10px] tracking-[0.28em] text-muted-foreground uppercase">
+                {label}
+              </div>
+              <div className="font-serif-display text-2xl text-foreground">{val}</div>
+              <div className="text-[10px] tracking-[0.2em] text-accent uppercase">Illustratif</div>
+            </div>
+          ))}
+        </div>
+      </SectionBlock>
     </PageShell>
   );
 }
