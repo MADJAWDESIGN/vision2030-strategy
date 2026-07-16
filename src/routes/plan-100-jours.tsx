@@ -75,22 +75,56 @@ const livrables30 = [
   "Premières possibilités de gains rapides",
 ];
 
-const phase2 = [
-  "Prioriser les risques critiques et les gains rapides",
-  "Bâtir un premier CAPEX 3 ans par actif",
-  "Structurer une bibliothèque initiale de standards",
-  "Formaliser la cadence de reporting aux associés",
-  "Sélectionner les partenaires stratégiques à qualifier",
-  "Définir les indicateurs à suivre en priorité",
+const phase2Travaux = [
+  "Classification des immeubles par typologie, âge et positionnement",
+  "Analyse préliminaire du déficit d'entretien",
+  "Évaluation du programme CAPEX en cours et de sa cohérence",
+  "Analyse des fournisseurs actifs et de leur performance",
+  "Évaluation des processus existants et de leurs irritants",
+  "Première définition des standards LIFA à généraliser",
+  "Validation croisée des risques identifiés",
+  "Analyse des besoins d'équipe : rôles, charge, compétences",
+];
+const phase2Livrables = [
+  "Matrice de priorisation des risques",
+  "Indice préliminaire de santé des actifs",
+  "Liste des projets critiques",
+  "Diagnostic organisationnel",
+  "Recommandations de gains rapides",
+  "Structure cible proposée",
+  "Liste des KPI initiaux",
 ];
 
-const phase3 = [
-  "Présenter la feuille de route 2026-2030 aux associés",
-  "Valider les budgets pluriannuels 3, 5 et 10 ans",
-  "Fixer les jalons trimestriels de la première année",
-  "Confirmer la structure d'équipe cible",
-  "Officialiser les comités et les seuils d'autorité",
-  "Lancer la première vague d'appels d'offres cadrés",
+const phase3Travaux = [
+  "Cadre de gouvernance et comités",
+  "Processus d'approbation et seuils d'autorité",
+  "Standardisation technique et esthétique",
+  "Gestion documentaire et référentiels",
+  "CAPEX pluriannuel structuré",
+  "Cadre fournisseurs et contrats",
+  "Programme qualité et contrôles",
+  "Tableau de bord prototype",
+  "Programme de maintenance préventive",
+  "Feuille de route ESG révisée",
+];
+const phase3Livrables = [
+  "Plan CAPEX initial",
+  "Standards pilotes",
+  "Tableau de bord prototype",
+  "Structure des comités",
+  "Formulaire d'évaluation fournisseur",
+  "Calendrier de maintenance",
+  "Feuille de route ESG révisée",
+  "Plan de recrutement ou de développement",
+];
+
+const phase4Travaux = [
+  "Présentation aux associés",
+  "Validation des priorités",
+  "Sélection des projets pilotes",
+  "Communication à l'équipe",
+  "Calendrier d'implantation",
+  "Approbation du plan annuel",
 ];
 
 function Page() {
@@ -139,26 +173,80 @@ function Page() {
         </aside>
       </SectionBlock>
 
-      <SectionBlock tone="muted" eyebrow="Phase 2 · Jours 31 à 60" title="Structurer et prioriser.">
+      <SectionBlock tone="muted" eyebrow="Phase 2 · Jours 31 à 60" title="Diagnostiquer.">
         <p className="max-w-3xl text-base leading-relaxed text-foreground/85">
-          La deuxième phase transforme les observations en cadre décisionnel. On
-          structure les données, on fait émerger les priorités et on prépare les
-          arbitrages qui seront présentés aux associés.
+          Passer des observations à un diagnostic structuré : classer les
+          immeubles, mesurer les écarts, croiser les risques et préparer les
+          arbitrages qui seront proposés aux associés.
         </p>
-        <div className="mt-10">
-          <BulletList items={phase2} />
+        <div className="mt-10 grid gap-10 lg:grid-cols-2">
+          <div>
+            <div className="text-[11px] tracking-[0.28em] text-muted-foreground uppercase">
+              Travaux menés
+            </div>
+            <div className="mt-4"><BulletList items={phase2Travaux} /></div>
+          </div>
+          <div>
+            <div className="text-[11px] tracking-[0.28em] text-muted-foreground uppercase">
+              Livrables
+            </div>
+            <ul className="mt-4 space-y-3">
+              {phase2Livrables.map((l) => (
+                <li key={l} className="flex items-start gap-3 border border-border bg-card p-4 text-sm">
+                  <span className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-accent" />
+                  <span>{l}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </SectionBlock>
 
-      <SectionBlock eyebrow="Phase 3 · Jours 61 à 100" title="Proposer et enclencher.">
+      <SectionBlock eyebrow="Phase 3 · Jours 61 à 90" title="Structurer.">
         <p className="max-w-3xl text-base leading-relaxed text-foreground/85">
-          La troisième phase formalise la feuille de route, valide les budgets
-          pluriannuels et lance les premières actions concrètes — sans jamais
-          engager LIFA au-delà de ce qui a été validé par les associés.
+          Formaliser les cadres qui rendront l'organisation opérante :
+          gouvernance, CAPEX, standards, fournisseurs, qualité, maintenance,
+          données et ESG.
+        </p>
+        <div className="mt-10 grid gap-10 lg:grid-cols-2">
+          <div>
+            <div className="text-[11px] tracking-[0.28em] text-muted-foreground uppercase">
+              Travaux menés
+            </div>
+            <div className="mt-4"><BulletList items={phase3Travaux} /></div>
+          </div>
+          <div>
+            <div className="text-[11px] tracking-[0.28em] text-muted-foreground uppercase">
+              Livrables
+            </div>
+            <ul className="mt-4 space-y-3">
+              {phase3Livrables.map((l) => (
+                <li key={l} className="flex items-start gap-3 border border-border bg-card p-4 text-sm">
+                  <span className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full bg-accent" />
+                  <span>{l}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </SectionBlock>
+
+      <SectionBlock tone="muted" eyebrow="Phase 4 · Jours 91 à 100" title="Mobiliser.">
+        <p className="max-w-3xl text-base leading-relaxed text-foreground/85">
+          Aligner les associés, l'équipe et les partenaires sur les priorités
+          retenues et enclencher les projets pilotes.
         </p>
         <div className="mt-10">
-          <BulletList items={phase3} />
+          <BulletList items={phase4Travaux} />
         </div>
+      </SectionBlock>
+
+      <SectionBlock tone="dark" eyebrow="Résultat attendu au jour 100" title="Une vision adaptée à la réalité de LIFA.">
+        <p className="font-serif-display max-w-3xl text-2xl leading-relaxed opacity-95 sm:text-3xl">
+          Un portefeuille de projets priorisé, des responsabilités claires, un
+          premier tableau de bord opérationnel et une feuille de route validée
+          par les associés.
+        </p>
       </SectionBlock>
     </PageShell>
   );
