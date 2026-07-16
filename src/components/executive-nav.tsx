@@ -89,7 +89,15 @@ export function ExecutiveFooter() {
             </div>
             <p className="mt-3 leading-relaxed">
               Confidentiel — réservé aux associés et aux personnes autorisées de LIFA
-              Fonds Immobilier.
+              Investissements.
+            </p>
+            <p className="mt-4 leading-relaxed">
+              Préparé par{" "}
+              <span className="font-semibold tracking-[0.12em] uppercase">
+                Johannes Walgenwitz
+              </span>
+              <br />
+              Faisant suite à l'échange du 15 juin 2026.
             </p>
           </div>
         </div>
