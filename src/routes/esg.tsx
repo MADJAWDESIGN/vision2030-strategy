@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageShell, SectionBlock, CardGrid, IllustrativeNote, BulletList } from "@/components/page-shell";
+import { PageShell, SectionBlock, IllustrativeNote, BulletList } from "@/components/page-shell";
 import { sectionByPath } from "@/lib/sections";
 
 export const Route = createFileRoute("/esg")({
