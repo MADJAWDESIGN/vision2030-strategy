@@ -97,7 +97,7 @@ export function ExecutiveFooter() {
                 Johannes Walgenwitz
               </span>
               <br />
-              Faisant suite à l'échange du 15 juin 2026.
+              Faisant suite à l'échange du 15 juillet 2026.
             </p>
           </div>
         </div>

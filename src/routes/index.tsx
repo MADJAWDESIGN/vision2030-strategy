@@ -99,7 +99,7 @@ function Index() {
               pour les associés de{" "}
               <span className="font-medium">LIFA Investissements</span>,
               faisant suite à notre échange du{" "}
-              <span className="font-medium">15 juin 2026</span>.
+              <span className="font-medium">15 juillet 2026</span>.
             </div>
 
             <p className="font-serif-display mt-10 max-w-3xl border-l border-accent/70 pl-6 text-2xl leading-relaxed opacity-95 sm:text-3xl">
