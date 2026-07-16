@@ -10,8 +10,21 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VisionRouteImport } from './routes/vision'
+import { Route as StandardsRouteImport } from './routes/standards'
 import { Route as Plan100JoursRouteImport } from './routes/plan-100-jours'
+import { Route as OrganisationRouteImport } from './routes/organisation'
+import { Route as MaintenanceRouteImport } from './routes/maintenance'
+import { Route as KpiRouteImport } from './routes/kpi'
+import { Route as GouvernanceRouteImport } from './routes/gouvernance'
+import { Route as GestionActifsRouteImport } from './routes/gestion-actifs'
+import { Route as FournisseursRouteImport } from './routes/fournisseurs'
+import { Route as FeuilleDeRouteRouteImport } from './routes/feuille-de-route'
+import { Route as EsgRouteImport } from './routes/esg'
+import { Route as EnveloppeRouteImport } from './routes/enveloppe'
+import { Route as DonneesRouteImport } from './routes/donnees'
+import { Route as DocumentsRouteImport } from './routes/documents'
 import { Route as CreationValeurRouteImport } from './routes/creation-valeur'
+import { Route as CapexRouteImport } from './routes/capex'
 import { Route as IndexRouteImport } from './routes/index'
 
 const VisionRoute = VisionRouteImport.update({
@@ -19,14 +32,79 @@ const VisionRoute = VisionRouteImport.update({
   path: '/vision',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StandardsRoute = StandardsRouteImport.update({
+  id: '/standards',
+  path: '/standards',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Plan100JoursRoute = Plan100JoursRouteImport.update({
   id: '/plan-100-jours',
   path: '/plan-100-jours',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OrganisationRoute = OrganisationRouteImport.update({
+  id: '/organisation',
+  path: '/organisation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaintenanceRoute = MaintenanceRouteImport.update({
+  id: '/maintenance',
+  path: '/maintenance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KpiRoute = KpiRouteImport.update({
+  id: '/kpi',
+  path: '/kpi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GouvernanceRoute = GouvernanceRouteImport.update({
+  id: '/gouvernance',
+  path: '/gouvernance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GestionActifsRoute = GestionActifsRouteImport.update({
+  id: '/gestion-actifs',
+  path: '/gestion-actifs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FournisseursRoute = FournisseursRouteImport.update({
+  id: '/fournisseurs',
+  path: '/fournisseurs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeuilleDeRouteRoute = FeuilleDeRouteRouteImport.update({
+  id: '/feuille-de-route',
+  path: '/feuille-de-route',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsgRoute = EsgRouteImport.update({
+  id: '/esg',
+  path: '/esg',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnveloppeRoute = EnveloppeRouteImport.update({
+  id: '/enveloppe',
+  path: '/enveloppe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DonneesRoute = DonneesRouteImport.update({
+  id: '/donnees',
+  path: '/donnees',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocumentsRoute = DocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CreationValeurRoute = CreationValeurRouteImport.update({
   id: '/creation-valeur',
   path: '/creation-valeur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CapexRoute = CapexRouteImport.update({
+  id: '/capex',
+  path: '/capex',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -37,35 +115,139 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/capex': typeof CapexRoute
   '/creation-valeur': typeof CreationValeurRoute
+  '/documents': typeof DocumentsRoute
+  '/donnees': typeof DonneesRoute
+  '/enveloppe': typeof EnveloppeRoute
+  '/esg': typeof EsgRoute
+  '/feuille-de-route': typeof FeuilleDeRouteRoute
+  '/fournisseurs': typeof FournisseursRoute
+  '/gestion-actifs': typeof GestionActifsRoute
+  '/gouvernance': typeof GouvernanceRoute
+  '/kpi': typeof KpiRoute
+  '/maintenance': typeof MaintenanceRoute
+  '/organisation': typeof OrganisationRoute
   '/plan-100-jours': typeof Plan100JoursRoute
+  '/standards': typeof StandardsRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/capex': typeof CapexRoute
   '/creation-valeur': typeof CreationValeurRoute
+  '/documents': typeof DocumentsRoute
+  '/donnees': typeof DonneesRoute
+  '/enveloppe': typeof EnveloppeRoute
+  '/esg': typeof EsgRoute
+  '/feuille-de-route': typeof FeuilleDeRouteRoute
+  '/fournisseurs': typeof FournisseursRoute
+  '/gestion-actifs': typeof GestionActifsRoute
+  '/gouvernance': typeof GouvernanceRoute
+  '/kpi': typeof KpiRoute
+  '/maintenance': typeof MaintenanceRoute
+  '/organisation': typeof OrganisationRoute
   '/plan-100-jours': typeof Plan100JoursRoute
+  '/standards': typeof StandardsRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/capex': typeof CapexRoute
   '/creation-valeur': typeof CreationValeurRoute
+  '/documents': typeof DocumentsRoute
+  '/donnees': typeof DonneesRoute
+  '/enveloppe': typeof EnveloppeRoute
+  '/esg': typeof EsgRoute
+  '/feuille-de-route': typeof FeuilleDeRouteRoute
+  '/fournisseurs': typeof FournisseursRoute
+  '/gestion-actifs': typeof GestionActifsRoute
+  '/gouvernance': typeof GouvernanceRoute
+  '/kpi': typeof KpiRoute
+  '/maintenance': typeof MaintenanceRoute
+  '/organisation': typeof OrganisationRoute
   '/plan-100-jours': typeof Plan100JoursRoute
+  '/standards': typeof StandardsRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/creation-valeur' | '/plan-100-jours' | '/vision'
+  fullPaths:
+    | '/'
+    | '/capex'
+    | '/creation-valeur'
+    | '/documents'
+    | '/donnees'
+    | '/enveloppe'
+    | '/esg'
+    | '/feuille-de-route'
+    | '/fournisseurs'
+    | '/gestion-actifs'
+    | '/gouvernance'
+    | '/kpi'
+    | '/maintenance'
+    | '/organisation'
+    | '/plan-100-jours'
+    | '/standards'
+    | '/vision'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/creation-valeur' | '/plan-100-jours' | '/vision'
-  id: '__root__' | '/' | '/creation-valeur' | '/plan-100-jours' | '/vision'
+  to:
+    | '/'
+    | '/capex'
+    | '/creation-valeur'
+    | '/documents'
+    | '/donnees'
+    | '/enveloppe'
+    | '/esg'
+    | '/feuille-de-route'
+    | '/fournisseurs'
+    | '/gestion-actifs'
+    | '/gouvernance'
+    | '/kpi'
+    | '/maintenance'
+    | '/organisation'
+    | '/plan-100-jours'
+    | '/standards'
+    | '/vision'
+  id:
+    | '__root__'
+    | '/'
+    | '/capex'
+    | '/creation-valeur'
+    | '/documents'
+    | '/donnees'
+    | '/enveloppe'
+    | '/esg'
+    | '/feuille-de-route'
+    | '/fournisseurs'
+    | '/gestion-actifs'
+    | '/gouvernance'
+    | '/kpi'
+    | '/maintenance'
+    | '/organisation'
+    | '/plan-100-jours'
+    | '/standards'
+    | '/vision'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CapexRoute: typeof CapexRoute
   CreationValeurRoute: typeof CreationValeurRoute
+  DocumentsRoute: typeof DocumentsRoute
+  DonneesRoute: typeof DonneesRoute
+  EnveloppeRoute: typeof EnveloppeRoute
+  EsgRoute: typeof EsgRoute
+  FeuilleDeRouteRoute: typeof FeuilleDeRouteRoute
+  FournisseursRoute: typeof FournisseursRoute
+  GestionActifsRoute: typeof GestionActifsRoute
+  GouvernanceRoute: typeof GouvernanceRoute
+  KpiRoute: typeof KpiRoute
+  MaintenanceRoute: typeof MaintenanceRoute
+  OrganisationRoute: typeof OrganisationRoute
   Plan100JoursRoute: typeof Plan100JoursRoute
+  StandardsRoute: typeof StandardsRoute
   VisionRoute: typeof VisionRoute
 }
 
@@ -78,6 +260,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VisionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/standards': {
+      id: '/standards'
+      path: '/standards'
+      fullPath: '/standards'
+      preLoaderRoute: typeof StandardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/plan-100-jours': {
       id: '/plan-100-jours'
       path: '/plan-100-jours'
@@ -85,11 +274,95 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Plan100JoursRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/organisation': {
+      id: '/organisation'
+      path: '/organisation'
+      fullPath: '/organisation'
+      preLoaderRoute: typeof OrganisationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/maintenance': {
+      id: '/maintenance'
+      path: '/maintenance'
+      fullPath: '/maintenance'
+      preLoaderRoute: typeof MaintenanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kpi': {
+      id: '/kpi'
+      path: '/kpi'
+      fullPath: '/kpi'
+      preLoaderRoute: typeof KpiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gouvernance': {
+      id: '/gouvernance'
+      path: '/gouvernance'
+      fullPath: '/gouvernance'
+      preLoaderRoute: typeof GouvernanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gestion-actifs': {
+      id: '/gestion-actifs'
+      path: '/gestion-actifs'
+      fullPath: '/gestion-actifs'
+      preLoaderRoute: typeof GestionActifsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fournisseurs': {
+      id: '/fournisseurs'
+      path: '/fournisseurs'
+      fullPath: '/fournisseurs'
+      preLoaderRoute: typeof FournisseursRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feuille-de-route': {
+      id: '/feuille-de-route'
+      path: '/feuille-de-route'
+      fullPath: '/feuille-de-route'
+      preLoaderRoute: typeof FeuilleDeRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/esg': {
+      id: '/esg'
+      path: '/esg'
+      fullPath: '/esg'
+      preLoaderRoute: typeof EsgRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/enveloppe': {
+      id: '/enveloppe'
+      path: '/enveloppe'
+      fullPath: '/enveloppe'
+      preLoaderRoute: typeof EnveloppeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/donnees': {
+      id: '/donnees'
+      path: '/donnees'
+      fullPath: '/donnees'
+      preLoaderRoute: typeof DonneesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/documents': {
+      id: '/documents'
+      path: '/documents'
+      fullPath: '/documents'
+      preLoaderRoute: typeof DocumentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/creation-valeur': {
       id: '/creation-valeur'
       path: '/creation-valeur'
       fullPath: '/creation-valeur'
       preLoaderRoute: typeof CreationValeurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/capex': {
+      id: '/capex'
+      path: '/capex'
+      fullPath: '/capex'
+      preLoaderRoute: typeof CapexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -104,8 +377,21 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CapexRoute: CapexRoute,
   CreationValeurRoute: CreationValeurRoute,
+  DocumentsRoute: DocumentsRoute,
+  DonneesRoute: DonneesRoute,
+  EnveloppeRoute: EnveloppeRoute,
+  EsgRoute: EsgRoute,
+  FeuilleDeRouteRoute: FeuilleDeRouteRoute,
+  FournisseursRoute: FournisseursRoute,
+  GestionActifsRoute: GestionActifsRoute,
+  GouvernanceRoute: GouvernanceRoute,
+  KpiRoute: KpiRoute,
+  MaintenanceRoute: MaintenanceRoute,
+  OrganisationRoute: OrganisationRoute,
   Plan100JoursRoute: Plan100JoursRoute,
+  StandardsRoute: StandardsRoute,
   VisionRoute: VisionRoute,
 }
 export const routeTree = rootRouteImport
