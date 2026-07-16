@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VisionRouteImport } from './routes/vision'
+import { Route as Plan100JoursRouteImport } from './routes/plan-100-jours'
 import { Route as CreationValeurRouteImport } from './routes/creation-valeur'
 import { Route as IndexRouteImport } from './routes/index'
 
 const VisionRoute = VisionRouteImport.update({
   id: '/vision',
   path: '/vision',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Plan100JoursRoute = Plan100JoursRouteImport.update({
+  id: '/plan-100-jours',
+  path: '/plan-100-jours',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CreationValeurRoute = CreationValeurRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/creation-valeur': typeof CreationValeurRoute
+  '/plan-100-jours': typeof Plan100JoursRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/creation-valeur': typeof CreationValeurRoute
+  '/plan-100-jours': typeof Plan100JoursRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/creation-valeur': typeof CreationValeurRoute
+  '/plan-100-jours': typeof Plan100JoursRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/creation-valeur' | '/vision'
+  fullPaths: '/' | '/creation-valeur' | '/plan-100-jours' | '/vision'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/creation-valeur' | '/vision'
-  id: '__root__' | '/' | '/creation-valeur' | '/vision'
+  to: '/' | '/creation-valeur' | '/plan-100-jours' | '/vision'
+  id: '__root__' | '/' | '/creation-valeur' | '/plan-100-jours' | '/vision'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CreationValeurRoute: typeof CreationValeurRoute
+  Plan100JoursRoute: typeof Plan100JoursRoute
   VisionRoute: typeof VisionRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/vision'
       fullPath: '/vision'
       preLoaderRoute: typeof VisionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plan-100-jours': {
+      id: '/plan-100-jours'
+      path: '/plan-100-jours'
+      fullPath: '/plan-100-jours'
+      preLoaderRoute: typeof Plan100JoursRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/creation-valeur': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CreationValeurRoute: CreationValeurRoute,
+  Plan100JoursRoute: Plan100JoursRoute,
   VisionRoute: VisionRoute,
 }
 export const routeTree = rootRouteImport
