@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VisionRouteImport } from './routes/vision'
 import { Route as StandardsRouteImport } from './routes/standards'
+import { Route as Questions30RouteImport } from './routes/questions-30'
 import { Route as Plan100JoursRouteImport } from './routes/plan-100-jours'
 import { Route as OrganisationRouteImport } from './routes/organisation'
 import { Route as MaintenanceRouteImport } from './routes/maintenance'
@@ -35,6 +36,11 @@ const VisionRoute = VisionRouteImport.update({
 const StandardsRoute = StandardsRouteImport.update({
   id: '/standards',
   path: '/standards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Questions30Route = Questions30RouteImport.update({
+  id: '/questions-30',
+  path: '/questions-30',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Plan100JoursRoute = Plan100JoursRouteImport.update({
@@ -129,6 +135,7 @@ export interface FileRoutesByFullPath {
   '/maintenance': typeof MaintenanceRoute
   '/organisation': typeof OrganisationRoute
   '/plan-100-jours': typeof Plan100JoursRoute
+  '/questions-30': typeof Questions30Route
   '/standards': typeof StandardsRoute
   '/vision': typeof VisionRoute
 }
@@ -148,6 +155,7 @@ export interface FileRoutesByTo {
   '/maintenance': typeof MaintenanceRoute
   '/organisation': typeof OrganisationRoute
   '/plan-100-jours': typeof Plan100JoursRoute
+  '/questions-30': typeof Questions30Route
   '/standards': typeof StandardsRoute
   '/vision': typeof VisionRoute
 }
@@ -168,6 +176,7 @@ export interface FileRoutesById {
   '/maintenance': typeof MaintenanceRoute
   '/organisation': typeof OrganisationRoute
   '/plan-100-jours': typeof Plan100JoursRoute
+  '/questions-30': typeof Questions30Route
   '/standards': typeof StandardsRoute
   '/vision': typeof VisionRoute
 }
@@ -189,6 +198,7 @@ export interface FileRouteTypes {
     | '/maintenance'
     | '/organisation'
     | '/plan-100-jours'
+    | '/questions-30'
     | '/standards'
     | '/vision'
   fileRoutesByTo: FileRoutesByTo
@@ -208,6 +218,7 @@ export interface FileRouteTypes {
     | '/maintenance'
     | '/organisation'
     | '/plan-100-jours'
+    | '/questions-30'
     | '/standards'
     | '/vision'
   id:
@@ -227,6 +238,7 @@ export interface FileRouteTypes {
     | '/maintenance'
     | '/organisation'
     | '/plan-100-jours'
+    | '/questions-30'
     | '/standards'
     | '/vision'
   fileRoutesById: FileRoutesById
@@ -247,6 +259,7 @@ export interface RootRouteChildren {
   MaintenanceRoute: typeof MaintenanceRoute
   OrganisationRoute: typeof OrganisationRoute
   Plan100JoursRoute: typeof Plan100JoursRoute
+  Questions30Route: typeof Questions30Route
   StandardsRoute: typeof StandardsRoute
   VisionRoute: typeof VisionRoute
 }
@@ -265,6 +278,13 @@ declare module '@tanstack/react-router' {
       path: '/standards'
       fullPath: '/standards'
       preLoaderRoute: typeof StandardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/questions-30': {
+      id: '/questions-30'
+      path: '/questions-30'
+      fullPath: '/questions-30'
+      preLoaderRoute: typeof Questions30RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/plan-100-jours': {
@@ -391,6 +411,7 @@ const rootRouteChildren: RootRouteChildren = {
   MaintenanceRoute: MaintenanceRoute,
   OrganisationRoute: OrganisationRoute,
   Plan100JoursRoute: Plan100JoursRoute,
+  Questions30Route: Questions30Route,
   StandardsRoute: StandardsRoute,
   VisionRoute: VisionRoute,
 }

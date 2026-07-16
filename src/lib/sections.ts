@@ -24,7 +24,8 @@ export const SECTIONS: Section[] = [
   { slug: "gouvernance", path: "/gouvernance", label: "Gouvernance", chapter: "Chapitre XIII", summary: "Comités, seuils d'autorité, reporting." },
   { slug: "feuille-de-route", path: "/feuille-de-route", label: "Feuille de route 2026-2030", chapter: "Chapitre XIV", summary: "Séquence des grandes étapes." },
   { slug: "kpi", path: "/kpi", label: "KPI", chapter: "Chapitre XV", summary: "Indicateurs de performance suivis." },
-  { slug: "documents", path: "/documents", label: "Documents et annexes", chapter: "Chapitre XVI", summary: "Références et pièces jointes." },
+  { slug: "questions-30", path: "/questions-30", label: "Questions des 30 jours", chapter: "Chapitre XVI", summary: "Questions à résoudre durant la phase d'observation." },
+  { slug: "documents", path: "/documents", label: "Documents et annexes", chapter: "Chapitre XVII", summary: "Références et pièces jointes." },
 ];
 
 export function sectionByPath(pathname: string): Section | undefined {
