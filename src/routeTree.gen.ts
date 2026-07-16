@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VisionRouteImport } from './routes/vision'
+import { Route as CreationValeurRouteImport } from './routes/creation-valeur'
 import { Route as IndexRouteImport } from './routes/index'
 
 const VisionRoute = VisionRouteImport.update({
   id: '/vision',
   path: '/vision',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreationValeurRoute = CreationValeurRouteImport.update({
+  id: '/creation-valeur',
+  path: '/creation-valeur',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/creation-valeur': typeof CreationValeurRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/creation-valeur': typeof CreationValeurRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/creation-valeur': typeof CreationValeurRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/vision'
+  fullPaths: '/' | '/creation-valeur' | '/vision'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/vision'
-  id: '__root__' | '/' | '/vision'
+  to: '/' | '/creation-valeur' | '/vision'
+  id: '__root__' | '/' | '/creation-valeur' | '/vision'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CreationValeurRoute: typeof CreationValeurRoute
   VisionRoute: typeof VisionRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/vision'
       fullPath: '/vision'
       preLoaderRoute: typeof VisionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creation-valeur': {
+      id: '/creation-valeur'
+      path: '/creation-valeur'
+      fullPath: '/creation-valeur'
+      preLoaderRoute: typeof CreationValeurRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CreationValeurRoute: CreationValeurRoute,
   VisionRoute: VisionRoute,
 }
 export const routeTree = rootRouteImport
