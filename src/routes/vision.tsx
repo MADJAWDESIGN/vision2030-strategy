@@ -77,6 +77,16 @@ function VisionPage() {
           </h2>
 
           <div className="mt-10 space-y-6 text-lg leading-relaxed text-foreground/90">
+            <p className="text-sm tracking-wide text-muted-foreground">
+              Document préparé par{" "}
+              <span className="font-semibold tracking-[0.14em] text-foreground uppercase">
+                Johannes Walgenwitz
+              </span>{" "}
+              pour les associés de{" "}
+              <span className="font-medium text-foreground">LIFA Investissements</span>,
+              faisant suite à notre échange du{" "}
+              <span className="font-medium text-foreground">15 juin 2026</span>.
+            </p>
             <p>
               À la suite de nos échanges, j'ai souhaité mettre sur papier une
               première vision de ce que pourrait devenir la fonction Construction

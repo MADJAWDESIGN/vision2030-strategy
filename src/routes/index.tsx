@@ -91,6 +91,17 @@ function Index() {
               Premières orientations stratégiques
             </div>
 
+            <div className="mt-8 max-w-xl border-t border-white/15 pt-6 text-[12px] leading-relaxed tracking-wide opacity-85">
+              Document préparé par{" "}
+              <span className="font-semibold tracking-[0.14em] text-accent uppercase">
+                Johannes Walgenwitz
+              </span>{" "}
+              pour les associés de{" "}
+              <span className="font-medium">LIFA Investissements</span>,
+              faisant suite à notre échange du{" "}
+              <span className="font-medium">15 juin 2026</span>.
+            </div>
+
             <p className="font-serif-display mt-10 max-w-3xl border-l border-accent/70 pl-6 text-2xl leading-relaxed opacity-95 sm:text-3xl">
               « Chaque investissement en construction doit augmenter durablement la
               valeur de l'actif, améliorer l'expérience du locataire et soutenir la
