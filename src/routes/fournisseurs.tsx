@@ -48,4 +48,3 @@ function Page() {
     </PageShell>
   );
 }
-*** End Patch
