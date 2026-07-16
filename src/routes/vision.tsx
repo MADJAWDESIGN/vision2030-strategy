@@ -85,7 +85,7 @@ function VisionPage() {
               pour les associés de{" "}
               <span className="font-medium text-foreground">LIFA Investissements</span>,
               faisant suite à notre échange du{" "}
-              <span className="font-medium text-foreground">15 juin 2026</span>.
+              <span className="font-medium text-foreground">15 juillet 2026</span>.
             </p>
             <p>
               À la suite de nos échanges, j'ai souhaité mettre sur papier une
