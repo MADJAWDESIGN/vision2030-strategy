@@ -10,6 +10,9 @@ export const getRouter = () => {
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
+    basepath:
+      (import.meta as unknown as { env: Record<string, string | undefined> })
+        .env.VITE_BASE_PATH || "/",
   });
 
   return router;
