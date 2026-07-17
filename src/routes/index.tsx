@@ -239,7 +239,7 @@ function Index() {
             </p>
             <p>
               Elle doit devenir un véritable levier de création de valeur capable de
-              protéger les actifs, d'améliorer l'expérience des locataires, de soutenir
+              protéger les actifs, d'améliorer la vie des locataires, de soutenir
               les décisions d'investissement et d'accompagner durablement la croissance
               du portefeuille immobilier.
             </p>
