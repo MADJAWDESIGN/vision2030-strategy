@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { SECTIONS } from "@/lib/sections";
+import { ExecutiveSignature } from "@/components/executive-signature";
 
 export function ExecutiveNav() {
   const [open, setOpen] = useState(false);
