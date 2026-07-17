@@ -22,7 +22,7 @@ const roles = [
 ];
 
 const principes = [
-  "Des rôles clairs avant des postes supplémentaires",
+  "Des rôles définis avant des postes supplémentaires",
   "Un principe de subsidiarité : décider au bon niveau",
   "Une charge de travail soutenable, non un empilement",
   "Une redondance sur les fonctions critiques",
