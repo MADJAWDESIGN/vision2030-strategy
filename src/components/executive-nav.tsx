@@ -101,17 +101,7 @@ export function ExecutiveFooter() {
               Confidentiel — réservé aux associés et aux personnes autorisées de LIFA
               Investissements.
             </p>
-            <p className="mt-4 leading-relaxed">
-              Document de réflexion stratégique préparé à la suite de nos échanges du 15 juillet 2026.
-              <br />
-              <br />
-              Préparé par{" "}
-              <span className="font-semibold">Johannes Walgenwitz, PMP</span>
-              <br />
-              <span className="opacity-80">
-                Vision proposée pour le développement d'une direction Construction et Gestion des Actifs.
-              </span>
-            </p>
+            <ExecutiveSignature variant="stacked" tone="onDark" className="mt-4" />
           </div>
         </div>
         <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-[11px] tracking-[0.2em] uppercase opacity-60 md:flex-row md:items-center md:justify-between">
