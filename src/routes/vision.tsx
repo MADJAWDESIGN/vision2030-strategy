@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import facadeImg from "@/assets/vision-facade.jpg";
 import { PageShell, SectionBlock, CardGrid, IllustrativeNote } from "@/components/page-shell";
+import { ExecutiveSignature } from "@/components/executive-signature";
 import { sectionByPath } from "@/lib/sections";
 
 export const Route = createFileRoute("/vision")({
