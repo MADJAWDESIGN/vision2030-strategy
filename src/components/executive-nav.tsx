@@ -18,7 +18,7 @@ export function ExecutiveNav() {
         <div className="hidden items-center gap-2 md:flex">
           <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-[10px] font-medium tracking-[0.18em] text-accent-foreground uppercase">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-            Confidentiel
+            Confidentiel — Vision stratégique 2030
           </span>
         </div>
 
