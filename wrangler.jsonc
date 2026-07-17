@@ -1,9 +1,0 @@
-{
-  // Cloudflare Workers config for VISION 2030 (TanStack Start SSR).
-  // The full runtime config (main, assets binding, compat flags) is generated
-  // by Nitro into dist/server/wrangler.json during `bun run build`.
-  // This root file only pins the Worker name so deploys land on the
-  // vision2030-strategy.workers.dev subdomain.
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "vision2030-strategy"
-}
