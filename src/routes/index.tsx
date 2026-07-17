@@ -430,7 +430,7 @@ function Index() {
         {/* ============ CTA FINAL — EXPLORER LA VISION ============ */}
         <div
           ref={ctaRef}
-          className={`mx-auto flex max-w-[1400px] flex-col items-center px-6 pt-16 pb-40 text-center transition-all duration-1000 ease-out lg:px-10 ${
+          className={`mx-auto flex max-w-[1400px] flex-col items-center px-6 pt-16 pb-16 text-center transition-all duration-1000 ease-out lg:px-10 ${
             ctaVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
           }`}
         >
@@ -441,7 +441,7 @@ function Index() {
             Explorer la Vision
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
-          <blockquote className="mt-16 max-w-2xl">
+          <blockquote className="mt-8 max-w-2xl">
             <p
               className="font-serif-display italic text-foreground/60"
               style={{ fontSize: "clamp(15px, 1.4vw, 20px)", lineHeight: 1.7 }}
