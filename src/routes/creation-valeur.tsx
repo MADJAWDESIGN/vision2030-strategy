@@ -19,7 +19,7 @@ const chaine = [
   "Planification CAPEX",
   "Modernisation",
   "Réduction des coûts d'exploitation",
-  "Amélioration de l'expérience locataire",
+  "Amélioration du bien-être des locataires",
   "Protection du revenu",
   "Valorisation de l'actif",
 ];
@@ -38,7 +38,7 @@ const sources = [
     text: "Priorisation par le risque, regroupement des achats, standardisation, comparaison des coûts, meilleure prévision à terminaison.",
   },
   {
-    title: "Expérience locataire",
+    title: "Bien-être des locataires",
     text: "Qualité constante, meilleure communication, réduction des délais, confort, efficacité énergétique, moins d'interventions répétitives.",
   },
   {

@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Lock, ArrowRight, Download } from "lucide-react";
+import { Lock, ArrowRight, Download, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import heroImg from "@/assets/hero-cover.jpg";
 import heroExisting from "@/assets/hero-building.jpg";
 import { ExecutiveNav, ExecutiveFooter } from "@/components/executive-nav";
@@ -31,6 +32,34 @@ const journey = [
 ];
 
 function Index() {
+  const [showModal, setShowModal] = useState(false);
+  const [ctaVisible, setCtaVisible] = useState(false);
+  const ctaRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!ctaRef.current) return;
+    const el = ctaRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setCtaVisible(true);
+        });
+      },
+      { threshold: 0.2 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!showModal) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowModal(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [showModal]);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <ExecutiveNav />
@@ -150,13 +179,14 @@ function Index() {
               Explorer la Vision
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
-            <a
-              href="#lettre"
+            <button
+              type="button"
+              onClick={() => setShowModal(true)}
               className="inline-flex items-center gap-3 rounded-none border border-white/40 px-8 py-4 text-[12px] font-semibold tracking-[0.24em] text-white uppercase transition-all hover:border-white hover:bg-white/10"
             >
               <Download className="h-4 w-4" />
               Télécharger le document
-            </a>
+            </button>
           </div>
         </div>
 
@@ -396,9 +426,88 @@ function Index() {
             />
           </div>
         </div>
+
+        {/* ============ CTA FINAL — EXPLORER LA VISION ============ */}
+        <div
+          ref={ctaRef}
+          className={`mx-auto flex max-w-[1400px] flex-col items-center px-6 pt-16 pb-40 text-center transition-all duration-1000 ease-out lg:px-10 ${
+            ctaVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+          }`}
+        >
+          <Link
+            to="/vision"
+            className="group inline-flex items-center gap-3 rounded-none border border-accent bg-accent px-10 py-5 text-[12px] font-semibold tracking-[0.24em] text-accent-foreground uppercase transition-all hover:bg-transparent hover:text-accent"
+          >
+            Explorer la Vision
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+          <blockquote className="mt-16 max-w-2xl">
+            <p
+              className="font-serif-display italic text-foreground/60"
+              style={{ fontSize: "clamp(15px, 1.4vw, 20px)", lineHeight: 1.7 }}
+            >
+              « Une vision n'a de valeur que lorsqu'elle se transforme en actions
+              concrètes, créatrices de valeur durable. »
+            </p>
+          </blockquote>
+        </div>
       </section>
 
       <ExecutiveFooter />
+
+      {/* ============ MODALE — VERSION EN PRÉPARATION ============ */}
+      {showModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center px-4 animate-in fade-in duration-200"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+        >
+          <button
+            type="button"
+            aria-label="Fermer"
+            onClick={() => setShowModal(false)}
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          />
+          <div
+            className="relative z-10 w-full max-w-md border border-border bg-background p-8 shadow-2xl sm:p-10 animate-in zoom-in-95 fade-in duration-300"
+            style={{ boxShadow: "0 40px 100px -20px color-mix(in oklab, black 60%, transparent)" }}
+          >
+            <button
+              type="button"
+              onClick={() => setShowModal(false)}
+              aria-label="Fermer la fenêtre"
+              className="absolute right-4 top-4 text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <X className="h-4 w-4" />
+            </button>
+            <div className="flex items-center gap-3 text-[10px] tracking-[0.32em] text-muted-foreground uppercase">
+              <span className="h-px w-8 bg-accent" />
+              Document confidentiel
+            </div>
+            <h3
+              id="modal-title"
+              className="mt-5 font-display text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
+            >
+              Version complète en préparation
+            </h3>
+            <p className="mt-5 font-serif-display text-base leading-relaxed text-foreground/80 sm:text-lg">
+              La version imprimable haute définition sera remise aux associés de
+              LIFA Investissements dans le cadre de la prochaine étape du
+              processus.
+            </p>
+            <div className="mt-8 flex justify-end">
+              <button
+                type="button"
+                onClick={() => setShowModal(false)}
+                className="inline-flex items-center gap-2 border border-accent bg-accent px-6 py-3 text-[11px] font-semibold tracking-[0.24em] text-accent-foreground uppercase transition-all hover:bg-transparent hover:text-accent"
+              >
+                Fermer
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

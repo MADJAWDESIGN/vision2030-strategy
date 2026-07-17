@@ -20,6 +20,9 @@ export function ExecutiveNav() {
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             Confidentiel — Vision stratégique 2030
           </span>
+          <span className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-transparent px-3 py-1 text-[10px] font-medium tracking-[0.18em] text-muted-foreground uppercase">
+            Version 0.9 — Executive Preview
+          </span>
         </div>
 
         <button
@@ -99,12 +102,15 @@ export function ExecutiveFooter() {
               Investissements.
             </p>
             <p className="mt-4 leading-relaxed">
-              Préparé par{" "}
-              <span className="font-semibold tracking-[0.12em] uppercase">
-                Johannes Walgenwitz
-              </span>
+              Document de réflexion stratégique préparé à la suite de nos échanges du 15 juillet 2026.
               <br />
-              Faisant suite à l'échange du 15 juillet 2026.
+              <br />
+              Préparé par{" "}
+              <span className="font-semibold">Johannes Walgenwitz, PMP</span>
+              <br />
+              <span className="opacity-80">
+                Vision proposée pour le développement d'une direction Construction et Gestion des Actifs.
+              </span>
             </p>
           </div>
         </div>
