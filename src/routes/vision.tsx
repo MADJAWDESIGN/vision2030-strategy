@@ -46,7 +46,7 @@ const piliers = [
   { title: "ESG", text: "Trajectoire énergie, matériaux, déchets et confort locataire." },
   { title: "Données", text: "Sources fiables, tableaux de bord et indicateurs de performance." },
   { title: "Partenaires", text: "Réseau qualifié d'entrepreneurs, professionnels et fournisseurs." },
-  { title: "Développement des équipes", text: "Rôles clairs, formation continue et rétention des expertises." },
+  { title: "Développement des équipes", text: "Rôles définis, formation continue et rétention des expertises." },
 ];
 
 const etatActuel = [
