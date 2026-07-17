@@ -45,7 +45,7 @@ const ponderations = [
   ["Risque de défaillance", "20 %"],
   ["Protection de l'actif", "20 %"],
   ["Impact financier", "15 %"],
-  ["Expérience locataire", "10 %"],
+  ["Bien-être des locataires", "10 %"],
   ["Performance ESG", "10 %"],
 ];
 
