@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import facadeImg from "@/assets/vision-facade.jpg";
 import { PageShell, SectionBlock, CardGrid, IllustrativeNote } from "@/components/page-shell";
+import { ExecutiveSignature } from "@/components/executive-signature";
 import { sectionByPath } from "@/lib/sections";
 
 export const Route = createFileRoute("/vision")({
@@ -69,16 +70,10 @@ function VisionPage() {
       <SectionBlock eyebrow="Lettre d'intention" title="Premières orientations stratégiques.">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <div className="space-y-6 text-lg leading-relaxed text-foreground/90">
-            <p className="text-sm tracking-wide text-muted-foreground">
-              Document préparé par{" "}
-              <span className="font-semibold tracking-[0.14em] text-foreground uppercase">
-                Johannes Walgenwitz
-              </span>{" "}
-              pour les associés de{" "}
-              <span className="font-medium text-foreground">LIFA Investissements</span>,
-              faisant suite à notre échange du{" "}
-              <span className="font-medium text-foreground">15 juillet 2026</span>.
-            </p>
+            <ExecutiveSignature
+              variant="premium"
+              className="rounded-xl border border-border/60 bg-muted/30 p-6"
+            />
             <p>
               À la suite de nos échanges, j'ai souhaité mettre sur papier une première
               vision de ce que pourrait devenir la fonction Construction et Gestion des
