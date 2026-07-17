@@ -107,7 +107,7 @@ export function ExecutiveFooter() {
         </div>
         <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-[11px] tracking-[0.2em] uppercase opacity-60 md:flex-row md:items-center md:justify-between">
           <span>© {new Date().getFullYear()} LIFA — Tous droits réservés</span>
-          <span>Document confidentiel · v0.1</span>
+          <span>Version 0.9 — Executive Preview</span>
         </div>
       </div>
     </footer>
