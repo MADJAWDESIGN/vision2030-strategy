@@ -64,7 +64,7 @@ function VisionPage() {
     <PageShell
       section={section}
       title="Un centre d'excellence au service de la croissance."
-      intro="Faire de la fonction Construction et Gestion des Actifs un centre d'excellence capable de soutenir la croissance de LIFA, de protéger durablement ses investissements et d'améliorer l'expérience des locataires."
+      intro="Faire de la fonction Construction et Gestion des Actifs un centre d'excellence capable de soutenir la croissance de LIFA, de protéger durablement ses investissements et d'améliorer l'vie des locataires."
     >
       {/* Image + lettre d'intention */}
       <SectionBlock eyebrow="Lettre d'intention" title="Premières orientations stratégiques.">
