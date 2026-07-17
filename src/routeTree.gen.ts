@@ -26,7 +26,6 @@ import { Route as DonneesRouteImport } from './routes/donnees'
 import { Route as DocumentsRouteImport } from './routes/documents'
 import { Route as CreationValeurRouteImport } from './routes/creation-valeur'
 import { Route as CapexRouteImport } from './routes/capex'
-import { Route as IndexRouteImport } from './routes/index'
 
 const VisionRoute = VisionRouteImport.update({
   id: '/vision',
@@ -113,14 +112,8 @@ const CapexRoute = CapexRouteImport.update({
   path: '/capex',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
   '/capex': typeof CapexRoute
   '/creation-valeur': typeof CreationValeurRoute
   '/documents': typeof DocumentsRoute
@@ -140,7 +133,6 @@ export interface FileRoutesByFullPath {
   '/vision': typeof VisionRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
   '/capex': typeof CapexRoute
   '/creation-valeur': typeof CreationValeurRoute
   '/documents': typeof DocumentsRoute
@@ -161,7 +153,6 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
   '/capex': typeof CapexRoute
   '/creation-valeur': typeof CreationValeurRoute
   '/documents': typeof DocumentsRoute
@@ -183,7 +174,6 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
     | '/capex'
     | '/creation-valeur'
     | '/documents'
@@ -203,7 +193,6 @@ export interface FileRouteTypes {
     | '/vision'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/'
     | '/capex'
     | '/creation-valeur'
     | '/documents'
@@ -223,7 +212,6 @@ export interface FileRouteTypes {
     | '/vision'
   id:
     | '__root__'
-    | '/'
     | '/capex'
     | '/creation-valeur'
     | '/documents'
@@ -244,7 +232,6 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
   CapexRoute: typeof CapexRoute
   CreationValeurRoute: typeof CreationValeurRoute
   DocumentsRoute: typeof DocumentsRoute
@@ -385,18 +372,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CapexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
   CapexRoute: CapexRoute,
   CreationValeurRoute: CreationValeurRoute,
   DocumentsRoute: DocumentsRoute,
